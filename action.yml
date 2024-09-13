@@ -1,0 +1,25 @@
+name: 'Azure OpenAI GitHub Action'
+description: 'GitHub Action to review PRs using Azure OpenAI'
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token to access the repository'
+    required: true
+  AZURE_OPENAI_API_KEY:
+    description: 'Azure OpenAI API key'
+    required: true
+  AZURE_OPENAI_ENDPOINT:
+    description: 'Azure OpenAI API endpoint'
+    required: true
+  AZURE_OPENAI_MODEL:
+    description: 'Azure OpenAI model deployment name'
+    required: true
+  exclude:
+    description: 'Comma-separated list of file patterns to exclude'
+    required: false
+    default:  ""
+runs:
+  using: 'node16'
+  main: 'lib/index.js'
+branding:
+  icon: "aperture"
+  color: "green"

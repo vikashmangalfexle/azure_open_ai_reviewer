@@ -1,0 +1,27 @@
+{
+    "name": "my-azure-openai-",
+    "version": "1.0.0",
+    "main": "lib/main.js",
+    "author": "Ville Saukkonen",
+    "license": "MIT",
+    "scripts": {
+      "build": "tsc",
+      "package": "ncc build --source-map --license licenses.txt"
+      
+    },
+    "dependencies": {
+      "@actions/core": "^1.10.0",
+      "@octokit/rest": "^19.0.5",
+      "axios": "^1.4.0",
+      "parse-diff": "^0.7.1",
+      "minimatch": "^7.0.5",
+      "ts-node": "^10.9.1"
+    },
+    "devDependencies": {
+      "@types/node": "^18.15.5",
+    "@vercel/ncc": "^0.36.1",
+    "prettier": "^2.8.6",
+    "typescript": "^5.0.2"
+    }
+  }
+  
