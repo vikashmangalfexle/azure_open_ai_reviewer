@@ -232,16 +232,20 @@ async function main() {
       minimatch(file.to ?? "", pattern)
     );
   });
-
-  const comments = await analyzeCode(filteredDiff, prDetails);
-  if (comments.length > 0) {
-    await createReviewComment(
-      prDetails.owner,
-      prDetails.repo,
-      prDetails.pull_number,
-      comments
-    );
-  }
+  createReviewComment(
+    prDetails.owner,
+    prDetails.repo,
+    prDetails.pull_number,
+    [{body:"test",path:"test",line:5}])
+  // const comments = await analyzeCode(filteredDiff, prDetails);
+  // if (comments.length > 0) {
+  //   await createReviewComment(
+  //     prDetails.owner,
+  //     prDetails.repo,
+  //     prDetails.pull_number,
+  //     comments
+  //   );
+  // }
 }
 
 main().catch((error) => {
